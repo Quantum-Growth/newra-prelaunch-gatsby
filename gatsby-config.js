@@ -1,3 +1,11 @@
+/**
+ * Main Configuration File.
+ *
+ * Specify site metadata (title, description); Gatsby plugins; etc
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ */
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
