@@ -1,12 +1,15 @@
 // Sign Up Page
 import * as React from "react"
-import { PageProps, Link, graphql } from "gatsby"
 
+// This Gatsby page is a React component
 export default function FormPage() {
+  // React hook for storing the state of the form
   const [value, setValue] = React.useState({})
   const [serverResponse, setServerResponse] = React.useState(``)
 
-  // Listen to form changes and save them.
+  /**
+   * Listen to form changes and save them in the state
+   */
   function handleChange(e) {
     value[e.target.id] = e.target.value
     setServerResponse("")
@@ -35,16 +38,16 @@ export default function FormPage() {
         <input
           type="text"
           id="email"
-          value={value["email"] || ""} //why
-          onChange={handleChange}
           placeholder="email"
+          onChange={handleChange} //update state on user input
+          value={value["email"] || ""} //keep input up to date with state
         ></input>
         <input
           type="text"
           id="name"
-          value={value["name"] || ""} //why
-          onChange={handleChange}
           placeholder="name"
+          onChange={handleChange} //update state on user input
+          value={value["name"] || ""} //keep input up to date with state
         />
         <button>Submit</button>
         <input type="submit" />
@@ -54,8 +57,8 @@ export default function FormPage() {
 }
 
 function addKlaviyoSubscriber({ first_name, last_name, email }) {
-  const LIST_ID = ""
-  const PRIVATE_KEY = ""
+  const LIST_ID = "XHxPC4"
+  const PRIVATE_KEY = "pk_6977d22a8a606ca7e2665329e62f65472b"
 
   const options = {
     method: "POST",
