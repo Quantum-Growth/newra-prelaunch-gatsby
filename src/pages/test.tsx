@@ -30,23 +30,10 @@ export default function TestPage() {
     })
       .then(res => res.json())
       .then(body => {
-        console.log(`response from API:`, body)
+        console.log(`response from API:`, body.message)
       })
   }
 
-  function useFunction() {
-    const data = {
-      method: "POST",
-      headers: { "content-type": `application/json` },
-      body: JSON.stringify({
-        email: "george.washington6@klaviyo.com",
-      }),
-    }
-
-    fetch("/api/klaviyo", data)
-      .then(response => response.json())
-      .then(data => console.log(data))
-  }
   return (
     <div>
       <div>Testing Gatsby Functions</div>
@@ -74,10 +61,6 @@ export default function TestPage() {
         />
         <button type="submit">Submit</button>
       </form>
-
-      {/* <input type="text" id="user_email" value={value["first_name"] || ""} />
-
-      <button onClick={useFunction}>Test</button> */}
     </div>
   )
 }
